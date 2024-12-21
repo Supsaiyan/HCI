@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merch Shop</title>
+    <link rel="stylesheet" href="css/styleforreg.css">
+</head>
+<body>
+    <section class="login">
+        <div class="reg-box">
+            <form action="/submit-form" method="POST">
+                <h2>Sign up</h2>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="password" required>
+                    <label>Create Password</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="reload"></ion-icon></span>
+                    <input type="password" id="confirm-password" required>
+                    <label>Confirm Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" required> I agree with policy</label>
+                </div>
+                <button type="submit" class="sign-btn"><a href="index.html">Sign in</a></button>
+                <div class="register-link">
+                    <p>Already have an account? <a href="Sign-in.html">Sign in</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+    
+            if (password !== confirmPassword) {
+                event.preventDefault(); // Останавливаем отправку формы
+                alert("Passwords do not match!");
+            }
+        });
+    </script>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
